@@ -1,12 +1,12 @@
 ---
-import { unwrap } from '~/lib/util.ts';
-import CheckboxLink from '~/components/ui/CheckboxLink.astro';
-import ProductCard from '~/features/product/ProductCard.astro';
-import { applyDefaultCacheHeaders } from '~/config.ts';
-import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 import { getCollectionById, getProducts } from 'storefront:client';
-import SideColumnLayout from '~/layouts/SideColumnLayout.astro';
 import { z } from 'zod';
+import CheckboxLink from '~/components/ui/CheckboxLink.astro';
+import { applyDefaultCacheHeaders } from '~/config.ts';
+import ProductCard from '~/features/product/ProductCard.astro';
+import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
+import SideColumnLayout from '~/layouts/SideColumnLayout.astro';
+import { unwrap } from '~/lib/util.ts';
 
 const searchParams = Object.fromEntries(Astro.url.searchParams);
 
@@ -36,7 +36,7 @@ const collection = collectionResponse.data;
 const products = productsResponse.data.items.filter((product) => product.stock > 0);
 ---
 
-<PrimaryLayout title={`Astro Shop | ${collection.name}`}>
+<PrimaryLayout title={`Malva Pet Shop | ${collection.name}`}>
 	<div class="pt-4">
 		<SideColumnLayout class="flex flex-wrap gap-4">
 			<div slot="aside" class="flex flex-col gap-4 py-4">

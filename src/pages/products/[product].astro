@@ -1,17 +1,17 @@
 ---
+import { getImage } from 'astro:assets';
+import { getProductById } from 'storefront:client';
 import Card from '~/components/ui/Card.tsx';
+import { applyDefaultCacheHeaders } from '~/config.ts';
+import { AddToCartForm } from '~/features/cart/AddToCartForm.tsx';
 import CollectionSection from '~/features/collection/CollectionSection.astro';
 import ProductCarouselSection from '~/features/product/ProductCarouselSection.astro';
 import { ProductDetailDescriptionDialog } from '~/features/product/ProductDetailDescriptionDialog.tsx';
 import { ProductImageCarousel } from '~/features/product/ProductImageCarousel.tsx';
 import { ProductImageSwitcher } from '~/features/product/ProductImageSwitcher.tsx';
-import { applyDefaultCacheHeaders } from '~/config.ts';
-import { AddToCartForm } from '~/features/cart/AddToCartForm.tsx';
-import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
-import { getProductById } from 'storefront:client';
-import { unwrap } from '~/lib/util.ts';
-import { getImage } from 'astro:assets';
 import { ProductPrice } from '~/features/product/ProductPrice.tsx';
+import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
+import { unwrap } from '~/lib/util.ts';
 
 applyDefaultCacheHeaders(Astro.response.headers);
 
@@ -42,7 +42,7 @@ const firstImage = productImages[0];
 if (!firstImage) throw new Error(`No images found for product ${id}`);
 ---
 
-<PrimaryLayout title={`Astro Shop | ${product.name}`}>
+<PrimaryLayout title={`Malva Pet Shop | ${product.name}`}>
 	<main class="mx-auto mt-8 w-full max-w-[1200px] gap-8">
 		<div
 			class="mx-auto mb-16 mt-8 grid max-w-lg grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-[1fr_32rem] lg:gap-32"
